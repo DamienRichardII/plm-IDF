@@ -15,6 +15,26 @@
   <body>
     <div id="root"></div>
     <noscript>Cette page nécessite JavaScript. Retrouvez-nous sur https://www.parcourslemonde.org/</noscript>
+    <script>
+      // Filet de sécurité : navigateur trop ancien ou application non démarrée.
+      (function () {
+        function warn() {
+          if (document.getElementById('compat')) return
+          var d = document.createElement('div')
+          d.id = 'compat'
+          d.setAttribute('role', 'alert')
+          d.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#51394E;color:#fff;padding:14px 16px;font:16px/1.4 system-ui,sans-serif;text-align:center'
+          d.innerHTML = 'Votre navigateur semble trop ancien pour afficher correctement cette page. Mettez-le à jour ou rendez-vous sur <a href="https://www.parcourslemonde.org/" style="color:#fff;text-decoration:underline">parcourslemonde.org</a>.'
+          document.body.appendChild(d)
+        }
+        var ok = window.CSS && CSS.supports && CSS.supports('color', 'color-mix(in srgb, red, blue)') && 'IntersectionObserver' in window
+        if (!ok) warn()
+        setTimeout(function () {
+          var r = document.getElementById('root')
+          if (r && !r.children.length) warn()
+        }, 4000)
+      })()
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -10,5 +10,9 @@ export function scrollToForm(e: { preventDefault: () => void }) {
   const top = el.getBoundingClientRect().top + window.scrollY - 76
   window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' })
   el.focus({ preventScroll: true })
-  history.replaceState(null, '', '#formulaire')
+  try {
+    history.replaceState(null, '', '#formulaire')
+  } catch {
+    /* certains navigateurs intégrés refusent replaceState : sans conséquence */
+  }
 }
