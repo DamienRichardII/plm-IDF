@@ -17,6 +17,8 @@ npm run preview    # prévisualise dist/ (http://localhost:4173)
 ```
 
 ## Hébergement statique
+Le build est aussi compatible `file://` : `dist/index.html` s'ouvre par double-clic dans un navigateur (script classique, pas de module). Sans cela, le navigateur bloque le script et la page reste blanche.
+
 `npm run build` produit `dist/` : fichiers 100 % statiques, chemins relatifs (`base: './'`). Déposer le contenu de `dist/` chez n'importe quel hébergeur statique (Vercel, Netlify, GitHub Pages, OVH…), en HTTPS. Aucun serveur ni variable d'environnement n'est nécessaire pour l'affichage.
 
 ## QR code
