@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { priceShort } from '../config/site'
+import { scrollToForm } from '../lib/scrollToForm'
 
 /** Cibles qui rendent le CTA inutile ou gênant quand elles sont à l'écran. */
 const WATCHED = ['formulaire', 'hero-actions', 'contact']
@@ -34,6 +35,7 @@ export default function MobileAdhesionCTA() {
     >
       <a
         href="#formulaire"
+        onClick={scrollToForm}
         className="flex min-h-[52px] items-center justify-center gap-3 rounded-full bg-plum px-6 text-lg font-bold text-cream shadow-[0_8px_24px_-6px_rgb(81_57_78/0.6)]"
       >
         Adhérer — {priceShort}/an

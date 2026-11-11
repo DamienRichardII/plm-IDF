@@ -1,5 +1,6 @@
 import { ArrowRight, CalendarDays } from 'lucide-react'
 import { siteConfig } from '../config/site'
+import { scrollToForm } from '../lib/scrollToForm'
 import { BrushBand } from './Decor'
 
 export default function Hero() {
@@ -27,6 +28,7 @@ export default function Hero() {
       <div id="hero-actions" className="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row sm:justify-center">
         <a
           href="#formulaire"
+          onClick={scrollToForm}
           className="inline-flex min-h-[52px] flex-1 items-center justify-center gap-3 rounded-full bg-plum px-7 text-lg font-bold text-cream shadow-soft transition hover:-translate-y-0.5 hover:bg-plum/90 active:translate-y-0"
         >
           <ArrowRight aria-hidden="true" className="h-5 w-5" />

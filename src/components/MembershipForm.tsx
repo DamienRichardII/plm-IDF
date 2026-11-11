@@ -75,7 +75,8 @@ export default function MembershipForm({ className = '' }: { className?: string 
     <section
       id="formulaire"
       aria-labelledby="form-title"
-      className={`rounded-[28px] bg-white/90 p-5 shadow-soft sm:p-8 ${className}`}
+      tabIndex={-1}
+      className={`scroll-mt-20 outline-none rounded-[28px] bg-white/90 p-5 shadow-soft sm:p-8 ${className}`}
     >
       <h2 id="form-title" className="flex items-center justify-center gap-3 text-center text-2xl font-bold sm:text-3xl">
         <UserPlus aria-hidden="true" className="h-7 w-7 shrink-0" />

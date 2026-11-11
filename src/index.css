@@ -26,7 +26,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: hidden;
+  overflow-x: clip; /* pas de conteneur de scroll : les ancres restent fiables sur iOS */
   color: var(--color-ink);
   font-family: var(--font-sans);
   background-color: var(--color-cream);
