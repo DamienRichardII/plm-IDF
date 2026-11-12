@@ -40,7 +40,7 @@ Tout est centralisé dans `src/config/site.ts` : montant (10 €), infos du Gala
 - Lien de réservation du Gala (`gala.bookingUrl`), s'il existe ; vérifier date, horaires et adresse repris de l'affiche.
 - Coordonnées de contact (`contact.email` / `contact.phone`) : sinon seul le lien vers le site s'affiche.
 - URL publique finale (`PUBLIC_SITE_URL`) puis génération du QR.
-- Texte de la section « L'association » à valider (rédigé uniquement à partir de : mobilité, engagement, solidarité).
+- Section « L'association » : mission et cible 18–30 ans reprises des retours de l'association ; les textes « Engagement » et « Solidarité » restent à valider ou à remplacer.
 - Mentions légales / politique de confidentialité (aucune page n'est créée ici) avant toute collecte réelle.
 - Raccordements futurs : paiement, enregistrement des adhésions, email de confirmation, consentement RGPD.
 - Visuel du Gala : décor SVG provisoire, à remplacer par l'affiche ou une photo.
