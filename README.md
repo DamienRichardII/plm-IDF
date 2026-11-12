@@ -2,7 +2,9 @@
 
 Landing page responsive (mobile-first, pensée pour l'arrivée par QR code) : campagne d'adhésion, Gala des 10 ans, formulaire validé côté client et **simulation** du paiement.
 
-**Démonstration uniquement** : aucun backend, aucun paiement réel, aucun envoi de données, aucun stockage (ni localStorage, ni service tiers). Les données saisies ne vivent qu'en mémoire le temps de la simulation, puis sont effacées.
+**Paiement : virement bancaire uniquement.** Après validation du formulaire, le clic sur « Payer 10,00 € par virement » ouvre une fenêtre qui affiche le bénéficiaire, l'IBAN et le BIC (config : `payment` dans `src/config/site.ts`), avec boutons « Copier » et une référence de virement « Adhésion Nom Prénom ». Avant validation, ces informations ne sont pas affichées dans la page.
+
+**Aucun backend pour l'instant** : les informations saisies dans le formulaire ne sont ni envoyées, ni enregistrées, ni conservées (pas de localStorage). Le rapprochement se fait donc uniquement via la référence du virement. L'IBAN reste présent dans le code JavaScript public (inévitable pour un site statique).
 
 ## Stack
 React 19 + TypeScript (strict) · Vite · Tailwind CSS 4 · React Hook Form + Zod · Lucide React · polices auto-hébergées (@fontsource). Le fichier `package-lock.json` est conservé.
@@ -42,5 +44,5 @@ Tout est centralisé dans `src/config/site.ts` : montant (10 €), infos du Gala
 - URL publique finale (`PUBLIC_SITE_URL`) puis génération du QR.
 - Section « L'association » : mission et cible 18–30 ans reprises des retours de l'association ; les textes « Engagement » et « Solidarité » restent à valider ou à remplacer.
 - Mentions légales / politique de confidentialité (aucune page n'est créée ici) avant toute collecte réelle.
-- Raccordements futurs : paiement, enregistrement des adhésions, email de confirmation, consentement RGPD.
+- Raccordements futurs : enregistrement des adhésions (liste des adhérents), carte de membre, email de confirmation, consentement RGPD.
 - Visuel du Gala : décor SVG provisoire, à remplacer par l'affiche ou une photo.

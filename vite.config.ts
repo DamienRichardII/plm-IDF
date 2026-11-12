@@ -28,5 +28,5 @@ export default defineConfig({
   base: './',
   envPrefix: ['VITE_', 'PUBLIC_'],
   plugins: [react(), tailwindcss(), fileProtocolFriendly()],
-  build: { cssCodeSplit: false, rollupOptions: { output: { format: 'iife', inlineDynamicImports: true } } },
+  build: { cssCodeSplit: false, rollupOptions: { output: { format: 'iife' } } },
 })

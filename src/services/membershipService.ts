@@ -1,15 +1,14 @@
 import type { MembershipFormValues } from '../lib/membershipSchema'
 
 /**
- * Point de raccordement futur (paiement + enregistrement).
- * L'interface ne dépend que de ce contrat : remplacer `demoMembershipService`
- * par une implémentation réelle suffira, sans toucher aux composants.
+ * Point de raccordement futur (enregistrement de l'adhésion côté serveur).
+ * Aujourd'hui rien n'est transmis : `register` ne fait rien. Remplacer cette
+ * implémentation (API, Supabase…) suffira, sans toucher aux composants.
  */
 export interface MembershipService {
-  confirm(values: MembershipFormValues): Promise<void>
+  register(values: MembershipFormValues): Promise<void>
 }
 
-/** Simulation : ne fait rien, n'envoie rien, ne stocke rien. */
-export const demoMembershipService: MembershipService = {
-  confirm: () => new Promise((resolve) => setTimeout(resolve, 600)),
+export const membershipService: MembershipService = {
+  register: () => Promise.resolve(),
 }

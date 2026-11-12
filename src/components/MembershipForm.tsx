@@ -8,6 +8,7 @@ import type { MembershipFormValues } from '../lib/membershipSchema'
 import { priceLong, siteConfig } from '../config/site'
 import { BrushBand } from './Decor'
 import PaymentPreviewDialog from './PaymentPreviewDialog'
+import { membershipService } from '../services/membershipService'
 
 const field =
   'block h-12 w-full rounded-xl border bg-white pl-11 pr-3 text-base text-ink placeholder:text-ink/50 aria-[invalid=true]:border-red-700 border-plum/25'
@@ -47,7 +48,6 @@ export default function MembershipForm({ className = '' }: { className?: string 
   const {
     register,
     handleSubmit,
-    reset,
     watch,
     formState: { errors },
   } = useForm<MembershipFormValues>({
@@ -65,9 +65,8 @@ export default function MembershipForm({ className = '' }: { className?: string 
     'aria-required': true as const,
   })
 
-  const onClose = (completed: boolean) => {
-    setPending(null) // les données ne sont jamais conservées
-    if (completed) reset()
+  const onClose = () => {
+    setPending(null) // les données ne sont jamais conservées au-delà de la saisie
     submitRef.current?.focus()
   }
 
@@ -91,7 +90,10 @@ export default function MembershipForm({ className = '' }: { className?: string 
         <span aria-hidden="true" className="text-red-700">*</span> Champs obligatoires
       </p>
 
-      <form noValidate onSubmit={handleSubmit((v) => setPending(v))} className="mt-3 space-y-4">
+      <form noValidate onSubmit={handleSubmit(async (v) => {
+          await membershipService.register(v)
+          setPending(v)
+        })} className="mt-3 space-y-4">
         <Field id="fullName" label="Nom et prénom" icon={User} error={errors.fullName?.message}>
           <input id="fullName" type="text" autoComplete="name" placeholder="Votre nom et prénom" className={field} {...aria('fullName')} {...register('fullName')} />
         </Field>
@@ -133,12 +135,12 @@ export default function MembershipForm({ className = '' }: { className?: string 
           className="flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-plum px-5 text-base font-bold text-cream shadow-soft transition hover:-translate-y-0.5 hover:bg-plum/90 active:translate-y-0 sm:text-lg"
         >
           <CreditCard aria-hidden="true" className="h-5 w-5 shrink-0" />
-          Payer {priceLong} et adhérer
+          Payer {priceLong} par virement
           <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
         </button>
-        <p className="flex items-center justify-center gap-2 text-center text-sm font-semibold text-ink/85">
+        <p className="flex items-start justify-center gap-2 text-center text-sm font-semibold text-ink/85">
           <Info aria-hidden="true" className="h-4 w-4 shrink-0" />
-          Démonstration : aucun paiement ni envoi de données.
+          Paiement par virement bancaire uniquement. Les coordonnées s’affichent après validation du formulaire.
         </p>
       </form>
 
