@@ -83,7 +83,7 @@ export default function MembershipForm({ className = '' }: { className?: string 
       </h2>
       <p className="mt-3 text-center">
         <BrushBand className="px-5 py-2 font-display text-base font-bold text-plum sm:text-xl">
-          Rejoins Parcours le Monde Île-de-France !
+          Rejoins Parcours le Monde IDF !
         </BrushBand>
       </p>
       <p className="mt-4 text-sm text-ink/80">

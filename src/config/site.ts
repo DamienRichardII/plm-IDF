@@ -5,7 +5,7 @@
 const base = import.meta.env.BASE_URL
 
 export const siteConfig = {
-  associationName: 'Parcours le Monde Île-de-France',
+  associationName: 'Parcours le Monde IDF',
   membership: {
     amount: 10, // € par an
     currency: 'EUR',

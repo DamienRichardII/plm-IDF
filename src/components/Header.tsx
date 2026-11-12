@@ -78,10 +78,10 @@ export default function Header() {
       className="sticky top-0 z-40 border-b border-plum/10 bg-cream"
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[72px] lg:px-8">
-        <a href="#accueil" aria-label="Parcours le Monde Île-de-France — Accueil" className="shrink-0">
+        <a href="#accueil" aria-label="Parcours le Monde IDF — Accueil" className="shrink-0">
           <img
             src={siteConfig.assets.heroLogo}
-            alt="Parcours le Monde — Facilitateur de mobilité, Île-de-France, 10 ans"
+            alt="Parcours le Monde IDF — Facilitateur de mobilité, 10 ans"
             width={418}
             height={226}
             className="h-14 w-auto mix-blend-multiply lg:h-16"

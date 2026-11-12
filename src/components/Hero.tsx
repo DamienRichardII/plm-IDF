@@ -8,7 +8,7 @@ export default function Hero() {
     <section id="accueil" aria-labelledby="hero-title" className="relative px-4 pb-8 pt-5 text-center sm:px-6 lg:pt-8">
       <img
         src={siteConfig.assets.heroLogo}
-        alt="Parcours le Monde, facilitateur de mobilité Île-de-France — 10 ans"
+        alt="Parcours le Monde IDF, facilitateur de mobilité — 10 ans"
         width={418}
         height={226}
         fetchPriority="high"
