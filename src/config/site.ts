@@ -28,7 +28,7 @@ export const siteConfig = {
     phone: null as string | null,
   },
   links: {
-    website: 'https://www.parcourslemonde.org/',
+    website: 'https://idf.parcourslemonde.org/',
   },
   /** URL publique finale (QR code). Définie via PUBLIC_SITE_URL, jamais en dur. */
   publicSiteUrl: import.meta.env.PUBLIC_SITE_URL ?? '',
