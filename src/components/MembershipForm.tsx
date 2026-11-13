@@ -140,7 +140,7 @@ export default function MembershipForm({ className = '' }: { className?: string 
         </button>
         <p className="flex items-start justify-center gap-2 text-center text-sm font-semibold text-ink/85">
           <Info aria-hidden="true" className="h-4 w-4 shrink-0" />
-          Paiement par virement bancaire uniquement. Les coordonnées s’affichent après validation du formulaire.
+          Paiement par virement bancaire ou en espèces. Les coordonnées bancaires s’affichent après validation du formulaire.
         </p>
       </form>
 

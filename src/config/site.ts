@@ -17,7 +17,7 @@ export const siteConfig = {
     venue: 'Salle des fêtes Mairie du 20e — 6 place Gambetta, 75020 Paris' as string | null,
     bookingUrl: null as string | null, // lien de réservation https://… (à fournir)
   },
-  /** Paiement de la cotisation : virement bancaire uniquement (RIB fourni par l'association). */
+  /** Paiement de la cotisation : virement bancaire (RIB fourni par l'association) ou espèces. */
   payment: {
     beneficiary: 'PARCOURS LE MONDE IDF',
     iban: 'FR76 1751 5900 0008 0091 6005 881',

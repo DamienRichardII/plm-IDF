@@ -68,8 +68,8 @@ export default function PaymentPreviewDialog({ open, values, onClose }: Props) {
           Paiement par virement
         </h2>
         <p id="pay-desc" className="mt-2 text-base">
-          Pour finaliser votre adhésion, effectuez un virement de <strong>{priceLong}</strong> vers le compte ci-dessous.
-          Le paiement de la cotisation se fait uniquement par virement bancaire.
+          Le paiement de la cotisation ({priceLong}) peut se faire par virement bancaire ou en espèces.
+          Pour payer par virement, utilisez les coordonnées ci-dessous.
         </p>
 
         <dl className="mt-3 divide-y divide-sand rounded-2xl bg-cream/60 px-4">

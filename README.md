@@ -2,7 +2,7 @@
 
 Landing page responsive (mobile-first, pensée pour l'arrivée par QR code) : campagne d'adhésion, Gala des 10 ans, formulaire validé côté client et **simulation** du paiement.
 
-**Paiement : virement bancaire uniquement.** Après validation du formulaire, le clic sur « Payer 10,00 € par virement » ouvre une fenêtre qui affiche le bénéficiaire, l'IBAN et le BIC (config : `payment` dans `src/config/site.ts`), avec boutons « Copier » et une référence de virement « Adhésion Nom Prénom ». Avant validation, ces informations ne sont pas affichées dans la page.
+**Paiement : virement bancaire ou espèces.** Après validation du formulaire, le clic sur « Payer 10,00 € par virement » ouvre une fenêtre qui affiche le bénéficiaire, l'IBAN et le BIC (config : `payment` dans `src/config/site.ts`), avec boutons « Copier » et une référence de virement « Adhésion Nom Prénom ». Avant validation, ces informations ne sont pas affichées dans la page.
 
 **Aucun backend pour l'instant** : les informations saisies dans le formulaire ne sont ni envoyées, ni enregistrées, ni conservées (pas de localStorage). Le rapprochement se fait donc uniquement via la référence du virement. L'IBAN reste présent dans le code JavaScript public (inévitable pour un site statique).
 
